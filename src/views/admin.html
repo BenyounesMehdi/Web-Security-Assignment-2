@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Panel</title>
+  </head>
+  <body>
+    <h1>Admin Panel</h1>
+    <p>Welcome, admin! You can delete users here.</p>
+
+    <form action="/admin/delete" method="GET">
+      <label for="username">Username to delete:</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        value="carlos"
+        required
+      />
+      <button type="submit">Delete User</button>
+    </form>
+  </body>
+</html>
