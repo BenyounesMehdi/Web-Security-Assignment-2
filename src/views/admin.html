@@ -8,16 +8,23 @@
     <h1>Admin Panel</h1>
     <p>Welcome, admin! You can delete users here.</p>
 
-    <form action="/admin/delete" method="GET">
-      <label for="username">Username to delete:</label>
-      <input
-        type="text"
-        id="username"
-        name="username"
-        value="carlos"
-        required
-      />
-      <button type="submit">Delete User</button>
-    </form>
+    <table>
+      <tr>
+        <th>Username</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        <td>wiener</td>
+        <td>
+          <a href="/admin/delete?username=wiener" class="delete-link">Delete</a>
+        </td>
+      </tr>
+      <tr>
+        <td>carlos</td>
+        <td>
+          <a href="/admin/delete?username=carlos" class="delete-link">Delete</a>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>

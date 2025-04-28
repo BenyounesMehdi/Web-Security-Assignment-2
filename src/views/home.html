@@ -3,10 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <title>Home</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 50px;
+      }
+      a {
+        text-decoration: none;
+        color: blue;
+      }
+    </style>
   </head>
   <body>
-    <h1>Welcome to the Vulnerable App</h1>
-    <p>This is the homepage.</p>
-    <p>Try accessing <a href="/admin">/admin</a> (should be blocked later).</p>
+    <h2>
+      <a href="/admin" class="admin-link">Admin</a>
+    </h2>
+    <h1>Topic 4: URL-based access control can be circumvented</h1>
+    <p>
+      This website has an unauthenticated admin panel at /admin, but a front-end
+      system has been configured to block external access to that path. However,
+      the back-end application is built on a framework that supports the
+      X-Original-URL header.
+    </p>
+
+    <p>
+      <strong
+        >To solve the lab, access the admin panel and delete the user</strong
+      >
+      carlos
+    </p>
   </body>
 </html>
