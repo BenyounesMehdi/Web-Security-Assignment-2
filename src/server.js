@@ -1,6 +1,5 @@
 import express from "express";
 import cookieParser from "cookie-parser";
-import session from "express-session";
 import dotenv from "dotenv";
 import router from "./routes/route.js";
 
@@ -11,20 +10,6 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cookieParser());
-
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      secure: false,
-      httpOnly: true,
-      sameSite: "lax",
-      maxAge: 600000, // Set session lifetime (10 minutes)
-    },
-  })
-);
 
 // Block direct access to /admin and /admin/delete
 app.use((req, res, next) => {
@@ -41,15 +26,6 @@ app.use((req, res, next) => {
 
   next();
 });
-
-// Check if X-Original-URL is present and serve the spoofed route
-// app.use((req, res, next) => {
-//   const spoofedUrl = req.headers["x-original-url"];
-//   if (spoofedUrl) {
-//     req.url = spoofedUrl;
-//   }
-//   next();
-// });
 
 app.use((req, res, next) => {
   const spoofedUrl = req.headers["x-original-url"];
