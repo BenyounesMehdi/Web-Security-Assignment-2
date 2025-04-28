@@ -1,7 +1,5 @@
-// controllers/adminController.js
-
 export const deleteUser = (req, res) => {
-  const { username } = req.query;
+  const username = req.query.username;
 
   if (!username) {
     return res.status(400).send("Missing username.");
